@@ -9,15 +9,15 @@ In this project, we aimed to create a terminal maze solver that will find the sh
 In order to find the shortest path to solve the maze, we used Breadth First Search to come up with all possible solutions to solving the maze and then selecting the shortest path.
 
 ```ruby
-  def bfs(target_value)
-    queue = [self]
-    until queue.empty?
-      current_node = queue.shift
-      return current_node if current_node.value == target_value
-      queue += current_node.children
+    def bfs(target_value)
+      queue = [self]
+      until queue.empty?
+        current_node = queue.shift
+        return current_node if current_node.value == target_value
+        queue += current_node.children
+      end
+      nil
     end
-    nil
-  end
   
     def build_tree
     root = PolyTreeNode.new(maze.start)
